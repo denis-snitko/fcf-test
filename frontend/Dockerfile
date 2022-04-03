@@ -22,8 +22,8 @@ COPY . .
 RUN npm run build
 
 # production environment
-FROM nginx:stable-alpine
+# FROM nginx:stable-alpine
 
-COPY /usr/app/frontend/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+# COPY /usr/app/frontend/build /usr/share/nginx/html
+# EXPOSE 80
+# CMD ["nginx", "-g", "daemon off;"]

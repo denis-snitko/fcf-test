@@ -2,13 +2,15 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 
+const URL = 'http://865531-cs02320.tmweb.ru'
+
 export default function Crm() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [message, setMessage] = React.useState(null);
   const [isError, setIsError] = React.useState(false);
 
   const onSubmit = data => {
-    axios.post(`http://localhost:4205/auth/registration`, data, {
+    axios.post(`${URL}:4205/auth/registration`, data, {
       headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' }
     })
       .then(res => {
